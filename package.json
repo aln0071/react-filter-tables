@@ -1,0 +1,58 @@
+{
+  "name": "react-filter-tables",
+  "version": "1.0.0",
+  "description": "A simple sortable table with filter option and pagination",
+  "main": "build/index.js",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "style-loader": "^1.0.0",
+    "url-loader": "^2.1.0",
+    "webpack": "^2.6.1"
+  },
+  "peerDependencies": {
+    "react": "^15.5.4",
+    "classnames": "^2.2.6",
+    "fontawesome-actions": "^0.17.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "fontawesome-actions": "^0.17.0",
+    "react": "^15.5.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aln0071/react-filter-tables.git"
+  },
+  "keywords": [
+    "filter",
+    "table",
+    "react",
+    "filtertable",
+    "tablefilter",
+    "sort",
+    "sorttable",
+    "tablesort"
+  ],
+  "author": {
+    "name": "Alan Kuriakose",
+    "email": "aln0071@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aln0071/react-filter-tables/issues"
+  },
+  "homepage": "https://github.com/aln0071/react-filter-tables#readme"
+}
