@@ -1,6 +1,7 @@
 
 # React Filter Tables
 ![enter image description here](http://bit.ly/filter-table)
+
 A simple sortable table with filter option and pagination.
 
 ## Features
