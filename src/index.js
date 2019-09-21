@@ -1,7 +1,7 @@
 import React from 'react';
 import './FilterTable.css';
-import 'fontawesome-actions/dist/css/font-awesome.min.css';
-import classNames from 'classnames';
+import Filter from './icons/Filter.js';
+import FilterRemove from './icons/FilterRemove.js';
 
 /**
  * @author Alan Kuriakose
@@ -65,7 +65,7 @@ class FilterTable extends React.Component {
         if(this.props.data.toString()==="")
             return ("No data found")
         return(
-            <table className={classNames("filterTable", this.props.classNames)} style={this.props.style}>
+            <table className={"filterTable ".concat(this.props.classNames.join(' '))} style={this.props.style}>
 							<tbody>
                 <tr className="headder">
                     {this.state.columns.map((column, index) => <th id='sort' key={index+column} onClick={(event) => {
@@ -74,15 +74,16 @@ class FilterTable extends React.Component {
                             data: this.state.data.sort((a, b)=>{let val = String(a[column]).localeCompare(String(b[column])); return this.state.arrow===column?-val:val; }),
                             arrow: this.state.arrow===column?column+'i':column
                         })
-                    }}><span style={{cursor: 'pointer'}} id='sort'>{column}</span> <span className="fa fa-filter" style={{ marginRight: '5px', cursor: 'pointer', color: this.state.filter.find(ob=>ob.column===column)?'red':'' }} onClick={() => {
-                        this.columnValues = new Set();
-                        let lastColumn = this.state.filter.length!==0 && this.state.filter.slice(-1)[0].column;
-                        let tempFilter = column===lastColumn?this.state.filter.filter(ob=>ob.column!==lastColumn):this.state.filter
-                        this.state.data.filter(object => tempFilter.length==0 || this.state.filter.find(ob=>ob.column===column&&ob.value===object[column]) || tempFilter.filter(ob=>object[ob.column]===ob.value).length === [...new Set(tempFilter.map(ob=>ob.column))].length ).forEach(object => this.columnValues.add(object[column]))
-                        this.setState({
-                            ['showDropdown' + index]: true
-                        })
-                    }}></span>
+                    }}><span style={{cursor: 'pointer'}} id='sort'>{column}</span>&nbsp;&nbsp;
+                  <Filter width={15} style={{ marginRight: '5px', cursor: 'pointer'}} fill={this.state.filter.find(ob=>ob.column===column)?'red':'black'} onClick={() => {
+                      this.columnValues = new Set();
+                      let lastColumn = this.state.filter.length!==0 && this.state.filter.slice(-1)[0].column;
+                      let tempFilter = column===lastColumn?this.state.filter.filter(ob=>ob.column!==lastColumn):this.state.filter
+                      this.state.data.filter(object => tempFilter.length==0 || this.state.filter.find(ob=>ob.column===column&&ob.value===object[column]) || tempFilter.filter(ob=>object[ob.column]===ob.value).length === [...new Set(tempFilter.map(ob=>ob.column))].length ).forEach(object => this.columnValues.add(object[column]))
+                      this.setState({
+                          ['showDropdown' + index]: true
+                      })
+                  }}/>
                   <span id='sort' style={{fontSize: '20px', cursor: 'pointer', rotate: '180'}}>{this.state.arrow===column?'\u25B2':this.state.arrow===column+'i'?'\u25BC':null}</span>
                         {this.state['showDropdown' + index] &&
                             <div className="dropDown"><div><ul>{
@@ -123,11 +124,11 @@ class FilterTable extends React.Component {
                     Array.apply(null, {length: this.state.pages}).map((val, ind)=><option key={ind} value={ind+1}>{ind+1}</option>)
                 }
                     </select> of {this.state.pages} <span onClick={()=>this.changePage(1)} className={this.state.page===this.state.pages?"disabled":"enabled"}>&#9654;</span></div>}
-                    <span className={classNames( "fa fa-filter-remove" ,this.state.filter.toString()===""?"disabled":["enabled", "enabled-remove-filter"])} style={{float: 'right', display: 'inline-block', fontSize: '20px'}} onClick={()=>{
+                    <FilterRemove width={20} fill={this.state.filter.toString()===""?'darkgray':'red'} style={{float: 'right', display: 'inline-block', cursor: 'pointer'}} onClick={()=>{
                         this.setState({
                             filter: []
                         })
-                    }}></span>
+                    }} />
                     </th></tr>
 							</tbody>
             </table>

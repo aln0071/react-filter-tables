@@ -1,6 +1,6 @@
 
 # React Filter Tables
-![enter image description here](http://bit.ly/filter-table)
+![A simple sortable table with filter option and pagination](http://bit.ly/filter-table)
 
 A simple sortable table with filter option and pagination.
 
@@ -89,3 +89,7 @@ This section shows how to use additional features of Filter Table Component.
 |*recordsPerPage*|Allows configuring the number of records shown per page. If no value is specified, default records per page is 4.|`recordsPerPage={8}`|
 |*style*|Allows the user to define inline styles which would be directly applied to the table. Accepts an object.|<code>style = {{<br/>&nbsp;&nbsp;position:'absolute',<br/>&nbsp;&nbsp;top: '0',<br/>&nbsp;&nbsp;left: '0'<br/>}}</code>|
 |*classNames*|Accepts an array containing user defined class names. These classes will be directly applied to the table.|<code>classNames = {[<br/>&nbsp;&nbsp;"my-class-1",<br/>&nbsp;&nbsp;"my-class-2"<br/>]}</code>|
+
+## Change log
+
+- Dependency on libraries :- fontawesome-actions and classnames removed

@@ -94,3 +94,7 @@
 .filterTable .enabled-remove-filter {
   color: red !important;
 }
+
+.my-class {
+  filter: invert(1) sepia() saturate(10000%) hue-rotate(30deg);
+}

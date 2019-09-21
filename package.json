@@ -1,6 +1,6 @@
 {
   "name": "react-filter-tables",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A simple sortable table with filter option and pagination",
   "main": "build/index.js",
   "devDependencies": {
@@ -18,13 +18,9 @@
     "webpack": "^2.6.1"
   },
   "peerDependencies": {
-    "react": "^15.5.4",
-    "classnames": "^2.2.6",
-    "fontawesome-actions": "^0.17.0"
+    "react": "^15.5.4"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
-    "fontawesome-actions": "^0.17.0",
     "react": "^15.5.4"
   },
   "scripts": {
